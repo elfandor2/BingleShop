@@ -1,0 +1,30 @@
+{
+  "name": "bingleshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "start.dev": "nodemon index",
+    "db:create": "sequelize db:create",
+    "db:migrate": "sequelize db:migrate && sequelize db:seed:all",
+    "db:setup": "db:create && db:migrate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.3",
+    "jsonwebtoken": "^9.0.0",
+    "jwt-decode": "^3.1.2",
+    "pg": "^8.9.0",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/sequelize": "^4.28.14",
+    "sequelize-cli": "^6.6.0"
+  }
+}
