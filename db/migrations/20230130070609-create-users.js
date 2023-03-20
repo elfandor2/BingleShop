@@ -29,6 +29,18 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      role: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      email_token: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      email_verified: {
+        type: Sequelize.BOOLEAN,
+        allowNull: true,
+      },
       created_at: {
         type: Sequelize.DATE,
         defaultValue: Date.now()

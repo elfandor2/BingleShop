@@ -31,7 +31,19 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: true,
-        }
+        },
+        role: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        email_token: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        email_verified: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+        },
     },
     {
         sequelize: sequelize,

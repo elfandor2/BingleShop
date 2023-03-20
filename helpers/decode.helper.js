@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const ErrorResponse = require('./error.helper');
 const verifyToken = (req, res, next) => {
-    // const token = req.body.authToken
     const token = req.header('token');
     if (!token) {
         throw {
@@ -20,10 +19,6 @@ const verifyToken = (req, res, next) => {
 const loginAuth = (req, res, next) => {
     const code = req.header('code');
     if (!code) {
-        // throw {
-        //     code: 400,
-        //     message: "Login terlebih dahulu"
-        // }
         throw new ErrorResponse(403, "Login terlebih dahulu")
     }
     try {

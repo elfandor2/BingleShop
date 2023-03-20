@@ -2,7 +2,6 @@ const Response = require('../helpers/response.helper');
 const ErrorResponse = require('../helpers/error.helper');
 const { Item } = require('../db/models');
 const jwt_decode = require('jwt-decode');
-const jwt = require(`jsonwebtoken`);
 const { User } = require('../db/models')
 
 
@@ -49,11 +48,7 @@ class ItemsController {
     async updateItem(req, res, next) {
         try {
             const id = req.params.id
-            const itemsById = await Item.findOne({
-                where: {
-                    id
-                }
-            })
+            const itemsById = await Item.findOne({ where: { id } })
             if (!itemsById) {
                 throw new ErrorResponse(400, "Data item tidak tersedia")
             }

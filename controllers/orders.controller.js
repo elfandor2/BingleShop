@@ -11,7 +11,6 @@ class OrdersController {
         try {
             const code = req.header('code');
             const decode = jwt_decode(code);
-            console.log(decode);
             const isOrderExist = await Order.findAll({
                 where: {
                     user_id: decode.user_id,
@@ -23,7 +22,6 @@ class OrdersController {
                     attributes: ['full_name', 'email']
                 }]
             })
-            console.log(isOrderExist.id);
             if (isOrderExist.length === 0) {
                 throw new ErrorResponse(400, "Data order masih kosong")
             }
@@ -67,7 +65,6 @@ class OrdersController {
                         total: d.quantity * item.price
                     })
                 }
-                console.log(order.dataValues.id);
                 const orderItem = {
                     quantity: d.quantity,
                     price: item.price,
